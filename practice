@@ -1,0 +1,12 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Firefox()
+
+driver.get("https://omayo.blogspot.com/")
+driver.maximize_window()
+
+table = driver.find_element(By.XPATH, "//table[@id = 'table1']")
+
+col_value = driver.find_element(By.XPATH, "//tbody/tr[3]/td[2]")
+print(col_value.text)

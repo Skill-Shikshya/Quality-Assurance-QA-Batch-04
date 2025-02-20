@@ -1,0 +1,37 @@
+1. driver.title  [Captures Page Title]
+
+print(driver.title)  # Outputs: "Google"
+
+
+2. driver.current_url  [Captures Current URL]
+
+    print(driver.current_url)  # Outputs: "https://www.google.com/"
+
+
+3. driver.page_source  Captures Full HTML Source Code
+
+    print(driver.page_source)  # Outputs: Full HTML of the page
+
+
+
+4. driver.current_window_handle  [Captures Current Window ID]
+
+  print(driver.current_window_handle)  # Example: "CDwindow-ABC123"
+
+
+
+5. driver.window_handles  [Captures All Open Windows]
+
+    print(driver.window_handles)  # Example: ["CDwindow-ABC123", "CDwindow-XYZ456"]
+
+
+
+6. driver.get_cookies()  [Captures All Cookies]
+
+   print(driver.get_cookies())  
+
+
+
+7. driver.get_window_rect()   [Captures Browser Window Size]
+
+    print(driver.get_window_rect())  # Example: {'width': 1024, 'height': 768, 'x': 0, 'y': 0}

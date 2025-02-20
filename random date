@@ -1,0 +1,36 @@
+import time
+
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from time import sleep
+from random import Random
+
+driver = webdriver.Firefox()
+driver.maximize_window()
+
+random = Random()
+driver.get("http://seleniumpractise.blogspot.com/2016/08/how-to-handle-calendar-in-selenium.html")
+
+Date_Pick = driver.find_element(By.XPATH, "//input[@id='datepicker']")
+Date_Pick.click()
+
+MonthYear = driver.find_element(By.XPATH, "//div[@class='ui-datepicker-title']").text
+print(MonthYear)
+
+MonthValue = MonthYear.split(" ")[0].strip()
+print(MonthValue)
+YearValue = MonthYear.split(" ")[1].strip()
+print(YearValue)
+
+while MonthValue!= "May" and YearValue!= 2024:
+    driver.find_element(By.XPATH, "//a[@title='Next']").click()
+    MonthYear = driver.find_element(By.XPATH, "//div[@class='ui-datepicker-title']").text
+
+    MonthValue = MonthYear.split(" ")[0].strip()
+    print(MonthValue)
+    YearValue = MonthYear.split(" ")[1].strip()
+    print(YearValue)
+

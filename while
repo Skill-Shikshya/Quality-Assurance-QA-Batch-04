@@ -1,0 +1,7 @@
+password = "python123"
+user_input = ""
+
+while user_input != password:  # Keep asking until the password is correct
+    user_input = input("Enter the password: ")
+
+print(" Access granted!")

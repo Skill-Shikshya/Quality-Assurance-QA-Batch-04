@@ -1,0 +1,16 @@
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
+
+driver = webdriver.Firefox()
+driver.get("https://abc.com")
+try:
+    # Try to locate an element
+    element = driver.find_element(By.ID, "example-id")
+    print("Element found:", element.text)
+except NoSuchElementException as e:
+    print("Error: Element not found.")
+finally:
+
+    driver.quit()
